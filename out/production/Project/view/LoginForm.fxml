@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="373.0" prefWidth="395.0" style="-fx-background-color: rgb(164, 176, 190);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+    <children>
+        <JFXTextField fx:id="txtUserName" alignment="CENTER" focusColor="#1c521c" labelFloat="true" layoutX="52.0" layoutY="187.0" onAction="#userTxtOnAction" prefHeight="35.0" prefWidth="293.0" promptText="UserName" unFocusColor="#3cc23c">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></JFXTextField>
+        <JFXButton fx:id="btnLogin" layoutX="146.0" layoutY="322.0" onAction="#loginOnAction" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: green; -fx-background-radius: 100;" text="Login">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" layoutX="356.0" layoutY="8.0" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="23.0" style="-fx-background-color: red; -fx-background-radius: 100;" text="X" textFill="#1c521c">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </JFXButton>
+        <JFXPasswordField fx:id="txtPass" alignment="CENTER" focusColor="#1c521c" labelFloat="true" layoutX="53.0" layoutY="256.0" onAction="#passTxtOnAction" prefHeight="35.0" prefWidth="293.0" promptText="Password" unFocusColor="#3cc23c">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font></JFXPasswordField>
+        <Label layoutX="157.0" layoutY="14.0" text="WELOCME " textFill="#1c521c">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+      <ImageView fitHeight="118.0" fitWidth="176.0" layoutX="118.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/download(2).png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

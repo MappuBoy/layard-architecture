@@ -1,0 +1,63 @@
+DROP DATABASE IF EXISTS grosury_store;
+CREATE DATABASE grosury_store;
+USE grosury_store;
+
+#---------------------
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer(
+   Cust_id VARCHAR(6) NOT NULL,
+   Cust_Title VARCHAR(5) NOT NULL,
+   Cust_name VARCHAR(45),
+   Cust_address TEXT,
+   City VARCHAR(20),
+   Province VARCHAR(20),
+   PostalCode VARCHAR(9),
+   CONSTRAINT PRIMARY KEY (Cust_id)
+   
+);
+SHOW TABLES ;
+DESCRIBE Customer;
+#---------------------
+
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE IF NOT EXISTS Orders(
+   OrderId VARCHAR(6) NOT NULL,
+   Cust_id VARCHAR(6) NOT NULL,
+   Order_Date DATE,
+   Price DOUBLE DEFAULT 0.00,
+   CONSTRAINT PRIMARY KEY (OrderId),
+   CONSTRAINT FOREIGN KEY (Cust_id) REFERENCES Customer(Cust_id) ON DELETE CASCADE ON UPDATE CASCADE
+   );
+SHOW TABLES ;
+DESCRIBE Orders;
+#---------------------
+DROP TABLE IF EXISTS Item;
+CREATE TABLE IF NOT EXISTS Item(
+   Item_Code VARCHAR(6) NOT NULL,  
+   description VARCHAR(50) NOT NULL,
+   packSize VARCHAR(20) NOT NULL,
+   qtyOnHand INT DEFAULT 0,
+   unitPrice DOUBLE DEFAULT 0.00,
+   Item_Type VARCHAR(15),
+   CONSTRAINT PRIMARY KEY (Item_Code)
+   
+);
+SHOW TABLES ;
+DESCRIBE  Item;
+#---------------------
+
+DROP TABLE IF EXISTS Order_Detail;
+CREATE TABLE IF NOT EXISTS Order_Detail(
+   OrderId VARCHAR(6) NOT NULL,  
+   Item_Code VARCHAR(6) NOT NULL,
+   OrderQty INT NOT NULL,
+   Discount DOUBLE DEFAULT 0.00,
+   CONSTRAINT PRIMARY KEY (OrderId , Item_Code),
+ CONSTRAINT FOREIGN KEY (OrderId) REFERENCES Orders(OrderId) ON DELETE CASCADE ON UPDATE CASCADE,
+   CONSTRAINT FOREIGN KEY (Item_Code) REFERENCES Item(Item_Code) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SHOW TABLES ;
+DESCRIBE Order_Detail;
+
+#---------------------

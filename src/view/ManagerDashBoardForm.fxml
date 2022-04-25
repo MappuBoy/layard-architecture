@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="adminPage" prefHeight="537.0" prefWidth="623.0" style="-fx-border-color: #1c521c; -fx-background-color: rgb(164, 176, 190);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerDashBoardFormController">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="32.0" prefHeight="64.0" prefWidth="181.0" style="-fx-background-color: rgb(255, 255, 255);">
+         <children>
+            <AnchorPane prefHeight="66.0" prefWidth="88.0" style="-fx-background-color: #1c521c;">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/groceries.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="115.0" layoutY="4.0" text="Store">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblItemCount" alignment="CENTER" layoutX="105.0" layoutY="24.0" prefHeight="21.0" prefWidth="57.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="226.0" layoutY="32.0" prefHeight="66.0" prefWidth="181.0" style="-fx-background-color: rgb(255, 255, 255);">
+         <children>
+            <Label layoutX="96.0" layoutY="3.0" text="Customer">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="66.0" prefWidth="88.0" style="-fx-background-color: #1c521c;">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="25.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/shopping.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="lblCustomerCount" alignment="CENTER" layoutX="108.0" layoutY="24.0" prefHeight="31.0" prefWidth="57.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="432.0" layoutY="32.0" prefHeight="50.0" prefWidth="188.0" style="-fx-background-color: rgb(255, 255, 255);">
+         <children>
+            <AnchorPane prefHeight="66.0" prefWidth="88.0" style="-fx-background-color: #1c521c;">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/order.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="102.0" layoutY="4.0" text="Orders">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOrderCount" alignment="CENTER" layoutX="107.0" layoutY="25.0" prefHeight="31.0" prefWidth="50.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tbOrder" layoutX="15.0" layoutY="192.0" prefHeight="292.0" prefWidth="617.0">
+         <columns>
+            <TableColumn prefWidth="64.0" text="OrderId" />
+            <TableColumn prefWidth="53.0" text="CustomerId" />
+            <TableColumn prefWidth="57.0" text="date" />
+            <TableColumn prefWidth="57.0" text="cost" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="261.0" layoutY="139.0" text="Order Table">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
